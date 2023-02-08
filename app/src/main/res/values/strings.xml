@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TED Compose</string>
+    <string name="stops">Stops</string>
+    <string name="documents">Documents</string>
+    <string name="trip_number">Trip #%d</string>
+    <string name="order_number">Order #</string>
+    <string name="trailer_number">Trailer #</string>
+    <string name="truck_number">Truck #</string>
+    <string name="appointment">Appointment</string>
+    <string name="shipper">Shipper</string>
+    <string name="po_number">PO #</string>
+    <string name="cargo_description">Cargo  \nDescription</string>
+    <string name="cargo_specs">Cargo  \nSpecs</string>
+    <string name="driver_stop_instructions">Driver Stop \nInstructions</string>
+    <string name="driver_note">Driver Note</string>
+</resources>
