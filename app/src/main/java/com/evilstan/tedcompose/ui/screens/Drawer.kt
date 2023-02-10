@@ -1,9 +1,12 @@
 package com.evilstan.tedcompose.ui.screens
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Divider
 import androidx.compose.material.ScaffoldState
@@ -16,6 +19,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.evilstan.tedcompose.R
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.MaterialTheme
+import androidx.compose.ui.res.painterResource
+import com.evilstan.tedcompose.ui.theme.mainColor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -28,18 +34,24 @@ fun DrawerBody(
     modifier: Modifier = Modifier,
     onItemClick: (MenuItem) -> Unit
 ) {
-    LazyColumn(
-        modifier = modifier
-    ) {
-        items(menuItems) { item ->
-            DrawerItem(
-                item,
-                modifier = modifier
-            ) {
-                scope.launch {
-                    scaffoldState.drawerState.close()
+    Column(modifier = Modifier.background(MaterialTheme.mainColor)) {
+        Image(
+            painter = painterResource(id = R.drawable.trackensure_logo),
+            contentDescription = null
+        )
+        LazyColumn(
+            modifier = modifier
+        ) {
+            items(menuItems) { item ->
+                DrawerItem(
+                    item,
+                    modifier = modifier
+                ) {
+                    scope.launch {
+                        scaffoldState.drawerState.close()
+                    }
+                    onItemClick(item)
                 }
-                onItemClick(item)
             }
         }
     }
@@ -77,13 +89,3 @@ val drawerScreens = listOf(
     MenuItem(TEDriverScreens.Settings, R.string.settings),
     MenuItem(TEDriverScreens.Contacts, R.string.contacts),
 )
-
-//val drawerScreens = listOf(
-//    MenuItem(DrawerScreens.TRIPS, R.string.trips),
-//    MenuItem(DrawerScreens.SETTINGS, R.string.settings),
-//    MenuItem(DrawerScreens.CONTACTS, R.string.contacts),
-//)
-
-enum class DrawerScreens {
-    TRIPS, SETTINGS, CONTACTS
-}
