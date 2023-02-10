@@ -22,7 +22,7 @@ fun getRandomTrip() = Trip(
     getRandomStatus(),
     "26 Dec 2023",
     "28 Dec 2023",
-    getEventList(8)
+    getEventList(4)
 )
 
 
@@ -34,10 +34,11 @@ fun getEventList(size: Int): List<Event> {
     return eventList
 }
 
+
 fun getRandomEvent() =
     Event(
         ThreadLocalRandom.current().nextInt(1000000, 10000000).toLong(),
-        1,
+        ThreadLocalRandom.current().nextInt(1, 6),
         getRandomEventType(),
         getConsistentStatus(),
         getRandomString(7, 4, false)?.uppercase(),
@@ -149,14 +150,6 @@ fun getRandomStreet(): String {
     )
     return "${streets[ThreadLocalRandom.current().nextInt(streets.size)]}, ${ThreadLocalRandom.current().nextInt(100)}"
 }
-
-
-fun getColor(status: String): Pair<Color, Color> =
-    when (status) {
-        "accepted",
-        "dispatched" -> Pair(ColorDispatchedMain, ColorDispatchedBackground)
-        "en route",
-        "at stop" -> Pair(ColorEnRouteMain, ColorEnRouteBackground)
-        "completed" -> Pair(ColorCompletedMain, ColorCompletedBackground)
-        else -> Pair(ColorCancelledMain, ColorCancelledBackground)
-    }
+fun String.capitalizeWords(): String = split(" ").joinToString(" ") { word ->
+    word.lowercase().replaceFirstChar { it.titlecase(Locale.getDefault()) }
+}

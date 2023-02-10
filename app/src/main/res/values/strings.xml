@@ -1,8 +1,15 @@
 <resources>
+    <string name="trips">Trips</string>
+    <string name="settings">Settings</string>
+    <string name="contacts">Contacts</string>
+
+
     <string name="app_name">TED Compose</string>
     <string name="stops">Stops</string>
     <string name="documents">Documents</string>
-    <string name="trip_number">Trip #%d</string>
+    <string name="trip_list">Trip List</string>
+    <string name="trip_number_arg">Trip #%d</string>
+    <string name="trip_number">Trip #</string>
     <string name="order_number">Order #</string>
     <string name="trailer_number">Trailer #</string>
     <string name="truck_number">Truck #</string>
@@ -13,4 +20,12 @@
     <string name="cargo_specs">Cargo  \nSpecs</string>
     <string name="driver_stop_instructions">Driver Stop \nInstructions</string>
     <string name="driver_note">Driver Note</string>
+    <string name="trip_details">Trip Details</string>
+
+    <string name="accept">Accept</string>
+    <string name="start_driving">Start Driving</string>
+    <string name="confirm_arrival">Confirm Arrival</string>
+    <string name="confirm_departure">Confirm Departure</string>
+
+
 </resources>
